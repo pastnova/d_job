@@ -13,6 +13,7 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="DatabaseDriversLRU" value="postgresql" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
@@ -62,7 +63,9 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1623674528605</updated>
-      <workItem from="1623674547675" duration="2265000" />
+      <workItem from="1623674547675" duration="2810000" />
+      <workItem from="1623703394899" duration="32000" />
+      <workItem from="1623710497314" duration="2210000" />
     </task>
     <servers />
   </component>
