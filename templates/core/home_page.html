@@ -1,0 +1,60 @@
+{% extends  'core/base.html' %}
+
+{% block title %}
+    <title>Главная страница</title>
+{% endblock %}
+
+{% block header %}
+    <link rel="stylesheet" href="/static/css/home_page.css">
+{% endblock %}
+
+{% block login %}
+    {% if user.is_authenticated %}
+    <div class="button-login">
+        <a class="btn btn-outline-primary" methods="post" href="/logout">
+            <img src="/static/icons/smile.svg">
+            <div class="button-login-text">ВЫЙТИ</div>
+        </a>
+    </div>
+    {% else %}
+    <div class="button-login">
+        <a class="btn btn-outline-primary" methods="post" href="/login">
+            <img src="/static/icons/smile.svg">
+            <div class="button-login-text">ВОЙТИ</div>
+        </a>
+    </div>
+    {% endif %}
+{% endblock %}
+{% block main %}
+    {% if user.is_authenticated %}
+        <div class="lk-header">
+            <a href="">ЛИЧНЫЙ КАБИНЕТ</a>
+            <a href="">МОИ ЗАЯВКИ</a>
+        </div>
+        <div class="lk-data">
+            {% if userprofile %}
+                <p>{{ userprofile.name }}
+                {{ userprofile.surname }}
+                {{ userprofile.patronymic }}
+                {{ userprofile.office }}
+                {{ userprofile.email }}
+                {{ userprofile.degree }}
+                {{ userprofile.organization }}
+                {{ userprofile.address }}
+                {{ userprofile.phone }}
+                </p>
+                {% else %}
+            {% endif %}
+        </div>
+    {% else %}
+        <div class="banner">
+            <p>ВСЕ НА КОНФЕРЕНЦИИ!</p>
+        </div>
+        <div class="button-application">
+            <button class="btn btn-primary" methods="post" href="/create_image">
+                ПОДАТЬ ЗАЯВКУ
+            </button>
+        </div>
+    {% endif %}
+
+{% endblock %}

@@ -1,0 +1,10 @@
+.button-login{
+    text-align: center;
+    margin-left: 15px;
+}
+
+.buttons{
+    display: inline-flex;
+    size: auto;
+    margin-left: 30px;
+}

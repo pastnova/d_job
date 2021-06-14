@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    {% block title %}
+        <title></title>
+    {% endblock %}
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/static/css/base.css">
+    <script type="text/javascript" src={% static "/js/base.js" %}></script>
+{% block header %}
+{% endblock %}
+</head>
+<body>
+<div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white border-bottom shadow-sm">
+    <h5 class="my-0 mr-md-auto font-weight-normal">Конференции кафедры ИНОУП</h5>
+    <nav class="my-2 my-md-0 mr-md-3">
+        <a class="p-2 text-blue" href="/archive">АРХИВ</a>
+        <a class="p-2 text-blue" href="/news">НОВОСТИ</a>
+        <a class="p-2 text-blue" href="/conference">КОНФЕРЕНЦИИ</a>
+        <a class="p-2 text-blue" href="/registration" methods="post">РЕГИСТРАЦИЯ</a>
+        {% if user.is_superuser %}
+            <a class="btn btn-outline-primary" methods="post"
+               href="/create_conference">Создать конференцию
+            </a>
+        {% endif %}
+        <div class="buttons">
+            <button class="btn btn-outline-primary" methods="post" href="/create_image">ПОДАТЬ ЗАЯВКУ</button>
+            {% block login %}
+            {% endblock %}
+        </div>
+    </nav>
+</div>
+</body>
+{% block main %}
+{% endblock %}
+</html>

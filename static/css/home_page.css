@@ -1,0 +1,39 @@
+.banner {
+    display: flex;
+    background-image: url("/static/icons/banner.svg");
+    background-size: 100%;
+    background-repeat: no-repeat;
+    height: 700px;
+}
+
+.banner p {
+    color: white;
+    text-align: center;
+    font-size: 90px;
+    padding: 200px;
+    margin-left: 170px;
+}
+
+.button-application {
+    text-align: center;
+}
+
+.lk-header {
+    margin-left: 85px;
+    font-size: 24px;
+    padding: 10px;
+}
+
+.lk-data {
+    width: auto;
+}
+
+.lk-data p {
+    text-align: left;
+    padding: 40px 0px 0px 120px;
+    /*border: 4px #808080 solid;*/
+    width: 100px;
+    margin-left: 600px;
+    display: inline-block;
+    font-size: 18;
+}
