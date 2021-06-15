@@ -19,9 +19,17 @@ def home_page(request):
         userprofile = UserProfile.objects.get(
             user_id=request.user.id
         )
+        if request.user.is_superuser:
+            is_admin = True
+        else:
+            is_admin = False
     else:
         userprofile = None
-    return render(request, 'core/home_page.html', {'userprofile': userprofile})
+        is_admin = False
+    return render(request, 'core/home_page.html', {
+        'userprofile': userprofile,
+        'is_admin': is_admin,
+    })
 
 
 def registration(request):

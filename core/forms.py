@@ -1,5 +1,5 @@
 # coding: utf-8
-from django.forms import ModelForm
+from django.forms import ModelForm, PasswordInput
 from core.models import Conference
 from core.models import UserProfile
 
@@ -22,6 +22,9 @@ class UserProfileForm(ModelForm):
             'phone',
             'personal_data'
         ]
+        widgets = {
+            'password': PasswordInput(),
+        }
 
 
 class LoginForm(UserProfileForm):
@@ -33,6 +36,9 @@ class LoginForm(UserProfileForm):
             'email',
             'password',
         ]
+        widgets = {
+            'password': PasswordInput(),
+        }
 
 
 class CreateConference(ModelForm):
