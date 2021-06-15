@@ -1,6 +1,7 @@
 # coding utf-8
 import os
 from pathlib import Path
+import django_heroku
 import psycopg2
 
 
@@ -69,14 +70,14 @@ TEMPLATES = [
 ]
 
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'django_db',
-        'USER': 'postgres',
-        'PASSWORD': 'postgres',
-        'HOST': '127.0.0.1',
+     'default': {
+         'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'inoup_conf',
+#        'USER': 'postgres',
+#        'PASSWORD': 'postgres',
+        'HOST': '/var/run/postgresql',
         'PORT': '5432',
-    }
+     }
 }
 
 AUTH_PASSWORD_VALIDATORS = [
@@ -93,3 +94,5 @@ AUTH_PASSWORD_VALIDATORS = [
         'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
     },
 ]
+# Activate Django-Heroku.
+django_heroku.settings(locals())
